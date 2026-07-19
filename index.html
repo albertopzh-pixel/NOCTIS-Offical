@@ -1,195 +1,131 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>NØCTIS — Protegé tu identidad.</title>
-<meta name="description" content="NØCTIS. Fundas de identidad. Diseño oscuro, minimalista y hecho a medida.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NØCTIS | Official Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #000000;
+        }
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+        }
+    </style>
 </head>
-<body>
+<body class="text-white selection:bg-white selection:text-black overflow-x-hidden">
 
-<!-- ===================== LOADER ===================== -->
-<div class="loader" id="loader">
-  <div class="loader__logo">
-    <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
-      <path d="M17 3L6 13V29L17 21L28 29V13L17 3Z" stroke="#F5F5F7" stroke-width="1.4" stroke-linejoin="round"/>
-    </svg>
-    <span>NØ<em>CTIS</em></span>
-  </div>
-  <div class="loader__track">
-    <div class="loader__fill" id="loaderFill"></div>
-  </div>
-  <span class="loader__pct" id="loaderPct">0%</span>
-</div>
-<!-- ===================== NAV ===================== -->
-<header class="nav" id="nav">
-  <div class="nav__inner">
-    <a href="#" class="nav__logo">NØ<em>CTIS</em></a>
-    <a href="#coleccion" class="nav__cta">Ver colección</a>
-  </div>
-</header>
-</header>
-
-<main>
-
-  <!-- ===================== HERO ===================== -->
-  <section class="hero" id="hero">
-    <canvas id="particleCanvas" class="hero__canvas"></canvas>
-    <div class="hero__inner">
-      <span class="eyebrow reveal">NØCTIS · Identidad</span>
-      <h1 class="hero__title reveal">Protegé tu<br><em>identidad.</em></h1>
-      <p class="hero__sub reveal">Fundas diseñadas para quienes no se conforman con lo genérico. Oscuridad, detalle y carácter en cada pieza.</p>
-      
-      <!-- BOTÓN 1 (HERO) → BAJA A LA COLECCIÓN -->
-      <a href="#coleccion" class="btn btn--primary reveal" style="margin-top: 1.8rem;">Reservar ahora</a>
-
-      <div class="hero__product reveal">
-        <img src="https://i.postimg.cc/8ccVcnW1/lv-0-20260718120146.jpg" alt="Funda NØCTIS Signature Pack" class="hero__product-img">
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== COLECCIÓN ===================== -->
-  <section id="coleccion" class="coleccion">
-    <div class="section-head reveal">
-      <span class="eyebrow">Colección</span>
-      <h2 class="section-title">Cuatro piezas.<br>Un mismo carácter.</h2>
-    </div>
-
-    <div class="product-grid">
-      <article class="product-card reveal">
-        <div class="product-card__img">
-          <img src="https://i.postimg.cc/kgjDhx5g/lv-0-20260718192435.jpg" alt="Funda NØCTIS Built In Silence, diseño galaxia con corona" loading="lazy">
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/5 px-6 py-4 flex justify-between items-center">
+        <div class="text-xl font-bold tracking-[0.3em] text-white">NØCTIS</div>
+        <div class="hidden md:flex space-x-8 text-sm tracking-widest text-gray-400">
+            <a href="#shop" class="hover:text-white transition">PRODUCTOS</a>
+            <a href="#about" class="hover:text-white transition">FILOSOFÍA</a>
+            <a href="https://wa.me/5491168537523?text=Hola,%20vi%20la%20web%20de%20N%C3%98CTIS%20y%20me%20interesa%20el%20Drop%2001.%20%C2%BFTienen%20disponibilidad%20para%20mi%20modelo%20de%20tel%C3%A9fono?" target="_blank" class="hover:text-white transition">CONTACTO</a>
         </div>
-        <div class="product-card__info">
-          <h3>Built In Silence</h3>
-          <p>Edición galaxia, borde reforzado</p>
-          <span class="product-card__price"></span>
+        <button class="md:hidden text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+            </svg>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_0%,transparent_100%)]"></div>
+        
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="space-y-8 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs tracking-widest text-gray-400">
+                    <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                    DROP 01 AVAILABLE
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tighter leading-none">
+                    Elegancia <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">Balística.</span>
+                </h1>
+                <p class="text-gray-400 text-lg max-w-md mx-auto md:mx-0 font-light">
+                    Redefiniendo la protección móvil. Materiales premium, estética minimalista y resguardo absoluto para tus dispositivos.
+                </p>
+                <div class="pt-4">
+                    <a href="https://wa.me/5491168537523?text=Hola,%20vi%20la%20web%20de%20N%C3%98CTIS%20y%20me%20interesa%20el%20Drop%2001.%20%C2%BFTienen%20disponibilidad%20para%20mi%20modelo%20de%20tel%C3%A9fono?" target="_blank" class="bg-white text-black px-8 py-3 rounded-full font-medium hover:bg-gray-200 transition">Comprar Drop 01</a>
+                </div>
+            </div>
+            
+            <div class="relative flex justify-center">
+                <div class="w-72 h-72 absolute bg-white/5 rounded-full blur-3xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+                <!-- Imagen Principal Hero -->
+                <img src="1000104090.jpg" alt="Noctis Case Premium" class="w-full max-w-[400px] object-contain rounded-2xl glow-effect rotate-6 hover:rotate-0 transition-transform duration-700">
+            </div>
         </div>
-      </article>
+    </section>
 
-      <article class="product-card reveal">
-        <div class="product-card__img">
-          <img src="https://i.postimg.cc/wM278Pp4/lv-0-20260718123310.jpg" alt="Detalle macro de la funda NØCTIS, borde de aluminio y estampado galaxia" loading="lazy">
+    <!-- Product Showcase -->
+    <section id="shop" class="py-32 bg-zinc-950 border-y border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-20">
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-4">Ingeniería en Detalle</h2>
+                <p class="text-gray-400 font-light">Diseñada meticulosamente para fusionar una estética de vanguardia con una resistencia sin precedentes.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
+                <div class="space-y-8">
+                    <!-- Imagen Secundaria Producto -->
+                    <img src="1000104129_2.png" alt="Noctis Case Detail" class="w-full rounded-2xl border border-white/5 bg-black p-8 glow-effect">
+                </div>
+                
+                <div class="space-y-8">
+                    <div class="border-b border-white/10 pb-6">
+                        <h3 class="text-xl font-medium mb-2 text-white">Bordes de Cámara Elevados</h3>
+                        <p class="text-gray-400 text-sm font-light">Protección optimizada en el módulo fotográfico para evitar rayones mecánicos sobre cualquier superficie.</p>
+                    </div>
+                    <div class="border-b border-white/10 pb-6">
+                        <h3 class="text-xl font-medium mb-2 text-white">Textura Antideslizante Exclusiva</h3>
+                        <p class="text-gray-400 text-sm font-light">Agarre ergonómico premium de alto confort que reduce drásticamente las caídas accidentales.</p>
+                    </div>
+                    <div class="pb-6">
+                        <h3 class="text-xl font-medium mb-2 text-white">Núcleo de Absorción de Impacto</h3>
+                        <p class="text-gray-400 text-sm font-light">Materiales compuestos capaces de disipar la energía de caídas sin ensanchar el grosor original del teléfono.</p>
+                    </div>
+
+                    <div class="pt-6">
+                        <a href="https://wa.me/5491168537523?text=Hola,%20vi%20la%20web%20de%20N%C3%98CTIS%20y%20me%20interesa%20el%20Drop%2001.%20%C2%BFTienen%20disponibilidad%20para%20mi%20modelo%20de%20tel%C3%A9fono?" target="_blank" class="w-full bg-white text-black text-center py-3 rounded-lg font-medium hover:bg-gray-200 transition block">Adquirir en NØCTIS</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="product-card__info">
-          <h3>Macro Detail</h3>
-          <p>Borde reforzado y acabado galaxia</p>
-          <span class="product-card__price"></span>
+    </section>
+
+    <!-- Galería / Unboxing -->
+    <section class="py-32">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="rounded-2xl overflow-hidden border border-white/5 bg-zinc-900/50 group">
+                    <img src="1000104183.jpg" alt="Macro NØCTIS" class="w-full h-80 object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="rounded-2xl overflow-hidden border border-white/5 bg-zinc-900/50 group">
+                    <img src="1000104177.jpg" alt="Packaging Premium NØCTIS" class="w-full h-80 object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="rounded-2xl overflow-hidden border border-white/5 bg-zinc-900/50 group flex flex-col justify-center p-8 text-center bg-gradient-to-b from-zinc-950 to-black">
+                    <h4 class="text-xl font-semibold mb-2">Edición Limitada</h4>
+                    <p class="text-gray-400 text-sm font-light mb-6">Cada empaque del Drop 01 incluye sellado hermético mate de colección.</p>
+                    <a href="https://wa.me/5491168537523?text=Hola,%20vi%20la%20web%20de%20N%C3%98CTIS%20y%20me%20interesa%20el%20Drop%2001.%20%C2%BFTienen%20disponibilidad%20para%20mi%20modelo%20de%20tel%C3%A9fono?" target="_blank" class="text-sm font-medium underline text-white hover:text-gray-300 transition">Consultar stock inmediato &rarr;</a>
+                </div>
+            </div>
         </div>
-      </article>
+    </section>
 
-      <article class="product-card reveal">
-        <div class="product-card__img">
-          <img src="https://i.postimg.cc/8ccVcnW1/lv-0-20260718120146.jpg" alt="Funda NØCTIS junto a su packaging sellado" loading="lazy">
+    <!-- Footer -->
+    <footer class="border-t border-white/5 bg-black py-12 text-center text-xs tracking-widest text-gray-500">
+        <div class="container mx-auto px-6 space-y-4">
+            <p class="text-white font-bold tracking-[0.4em]">NØCTIS LABS</p>
+            <p>&copy; 2026 NØCTIS. Todos los derechos reservados. Diseñado para perdurar.</p>
         </div>
-        <div class="product-card__info">
-          <h3>Signature Pack</h3>
-          <p>Incluye empaque premium sellado</p>
-          <span class="product-card__price"></span>
-        </div>
-      </article>
+    </footer>
 
-      <article class="product-card reveal">
-        <div class="product-card__img">
-          <img src="https://i.postimg.cc/pTVwc1sR/lv-0-20260718122710.jpg" alt="Funda NØCTIS vista superior con corona grabada" loading="lazy">
-        </div>
-        <div class="product-card__info">
-          <h3>Crown Edition</h3>
-          <p>Grabado de corona en alto detalle</p>
-          <span class="product-card__price"></span>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- ===================== PROCESO ===================== -->
-  <section class="proceso">
-    <div class="section-head reveal">
-      <span class="eyebrow">Cómo funciona</span>
-      <h2 class="section-title">Tres pasos.<br>Cero complicaciones.</h2>
-    </div>
-
-    <div class="process-grid">
-      <div class="process-card reveal">
-        <svg class="process-card__icon" width="30" height="30" viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="10" stroke="#F5F5F7" stroke-width="1.4"/><path d="M15 10v5l3.5 3.5" stroke="#F5F5F7" stroke-width="1.4" stroke-linecap="round"/></svg>
-        <span class="process-card__num">01</span>
-        <h3>Elegí tu estilo</h3>
-        <p>Explorá la colección y elegí el diseño que más te representa.</p>
-      </div>
-      <div class="process-card reveal">
-        <svg class="process-card__icon" width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M7 23l3-1 12-12-2-2-12 12-1 3z" stroke="#F5F5F7" stroke-width="1.4" stroke-linejoin="round"/></svg>
-        <span class="process-card__num">02</span>
-        <h3>Diseños NØCTIS</h3>
-        <p>Adaptamos cada diseño NØCTIS al modelo de tu teléfono.</p>
-      </div>
-      <div class="process-card reveal">
-        <svg class="process-card__icon" width="30" height="30" viewBox="0 0 30 30" fill="none"><rect x="7" y="7" width="16" height="16" rx="2" stroke="#F5F5F7" stroke-width="1.4"/><path d="M11 15l3 3 5-6" stroke="#F5F5F7" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span class="process-card__num">03</span>
-        <h3>Fabricamos</h3>
-        <p>Producción bajo pedido y control de calidad antes del envío.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== SECCIÓN DE RESERVA ===================== -->
-  <section id="reserva" class="proceso" style="border-top: 1px solid var(--line);">
-    <div class="section-head reveal">
-      <span class="eyebrow">Reserva</span>
-      <h2 class="section-title">Asegurá tu pieza.<br>Edición limitada.</h2>
-      <p style="color: var(--muted); margin-top: 0.8rem; font-size: 0.95rem; max-width: 400px; margin-inline: auto;">Producción en pequeñas cantidades.</p>
-    </div>
-    <div style="text-align: center; margin-top: 1.5rem;">
-      <!-- BOTÓN 2 (SECCIÓN RESERVA) → VA A WHATSAPP -->
-      <a href="https://wa.me/541136269907?text=%C2%A1Hola%21%20Gracias%20por%20escribir%20a%20N%C3%98CTIS.%0A%0AActualmente%20estamos%20preparando%20nuestro%20primer%20lanzamiento%20%28Drop%2001%29.%0A%0ADecime%20qu%C3%A9%20modelo%20de%20tel%C3%A9fono%20ten%C3%A9s%20y%20te%20env%C3%ADo%20toda%20la%20informaci%C3%B3n%20disponible%20sobre%20esa%20funda.%0A%0AGracias%20por%20formar%20parte%20del%20comienzo%20de%20N%C3%98CTIS." target="_blank" class="btn btn--primary btn--lg reveal">Reservar ahora</a>
-    </div>
-  </section>
-
-  <!-- ===================== CONFIANZA ===================== -->
-  <section class="trust-section" style="border-top: 1px solid var(--line); padding-block: 4rem; text-align: center;">
-    <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 800px; margin: 0 auto;">
-      <div class="reveal">
-        <span style="font-family: var(--font-display); font-size: 1.1rem; display: block;">🚚 Envíos seguros</span>
-        <p style="color: var(--muted); font-size: 0.85rem; margin-top: 0.3rem;">Seguimiento en tiempo real hasta tu puerta.</p>
-      </div>
-      <div class="reveal">
-        <span style="font-family: var(--font-display); font-size: 1.1rem; display: block;">🔒 Pago seguro</span>
-        <p style="color: var(--muted); font-size: 0.85rem; margin-top: 0.3rem;">Mercado Pago, transferencia o débito.</p>
-      </div>
-      <div class="reveal">
-        <span style="font-family: var(--font-display); font-size: 1.1rem; display: block;">📦 Embalaje premium</span>
-        <p style="color: var(--muted); font-size: 0.85rem; margin-top: 0.3rem;">Empaque diseñado para llegar en perfectas condiciones.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== CTA FINAL ===================== -->
-  <section id="cta" class="cta-final">
-    <p class="cta-final__phrase reveal">No llevás una funda.<br><em>Llevás una identidad.</em></p>
-    <!-- BOTÓN 3 (CTA FINAL) → VA A WHATSAPP -->
-    <a href="https://wa.me/541136269907?text=%C2%A1Hola%21%20Gracias%20por%20escribir%20a%20N%C3%98CTIS.%0A%0AActualmente%20estamos%20preparando%20nuestro%20primer%20lanzamiento%20%28Drop%2001%29.%0A%0ADecime%20qu%C3%A9%20modelo%20de%20tel%C3%A9fono%20ten%C3%A9s%20y%20te%20env%C3%ADo%20toda%20la%20informaci%C3%B3n%20disponible%20sobre%20esa%20funda.%0A%0AGracias%20por%20formar%20parte%20del%20comienzo%20de%20N%C3%98CTIS." target="_blank" class="btn btn--primary btn--lg reveal">Reservar mi funda</a>
-  </section>
-
-</main>
-
-<!-- ===================== FOOTER ===================== -->
-<footer class="footer">
-  <a href="#" class="nav__logo">NØ<em>CTIS</em></a>
-  <div class="footer__social">
-    <a href="https://www.instagram.com/nctis.pm" target="_blank" aria-label="Instagram">Instagram</a>
-    <a href="https://www.tiktok.com/@noctis.cp" target="_blank" aria-label="TikTok">TikTok</a>
-    <a href="https://wa.me/541136269907" target="_blank" aria-label="WhatsApp">WhatsApp</a>
-  </div>
-  <span class="footer__copy">© 2026 NØCTIS. Hecho en Argentina.</span>
-</footer>
-
-<!-- ===================== LIBRERÍAS ===================== -->
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="script.js"></script>
 </body>
-</html>
+  </html>
+  
