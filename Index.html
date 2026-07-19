@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>NØCTIS — Protegé tu identidad.</title>
+<meta name="description" content="NØCTIS. Fundas de identidad. Diseño oscuro, minimalista y hecho a medida.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===================== LOADER ===================== -->
+<div class="loader" id="loader">
+  <div class="loader__logo">
+    <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+      <path d="M17 3L6 13V29L17 21L28 29V13L17 3Z" stroke="#F5F5F7" stroke-width="1.4" stroke-linejoin="round"/>
+    </svg>
+    <span>NØ<em>CTIS</em></span>
+  </div>
+  <div class="loader__track">
+    <div class="loader__fill" id="loaderFill"></div>
+  </div>
+  <span class="loader__pct" id="loaderPct">0%</span>
+</div>
+
+<!-- ===================== CURSOR PREMIUM ===================== -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#" class="nav__logo">NØ<em>CTIS</em></a>
+    <a href="#reserva" class="nav__cta">Reservar</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="hero">
+    <canvas id="particleCanvas" class="hero__canvas"></canvas>
+    <div class="hero__inner">
+      <span class="eyebrow reveal">NØCTIS · Identidad</span>
+      <h1 class="hero__title reveal">Protegé tu<br><em>identidad.</em></h1>
+      <p class="hero__sub reveal">Fundas diseñadas para quienes no se conforman con lo genérico. Oscuridad, detalle y carácter en cada pieza.</p>
+      
+      <!-- NUEVO BOTÓN CTA EN EL HERO -->
+      <a href="#reserva" class="btn btn--primary reveal" style="margin-top: 1.8rem;">Reservar ahora</a>
+
+      <div class="hero__product reveal">
+        <!-- Imagen de mayor impacto: la del packaging con la funda apoyada -->
+        <img src="https://i.postimg.cc/8ccVcnW1/lv-0-20260718120146.jpg" alt="Funda NØCTIS Signature Pack" class="hero__product-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== COLECCIÓN (Historia visual ordenada) ===================== -->
+  <section id="coleccion" class="coleccion">
+    <div class="section-head reveal">
+      <span class="eyebrow">Colección</span>
+      <h2 class="section-title">Cuatro piezas.<br>Un mismo carácter.</h2>
+    </div>
+
+    <div class="product-grid">
+      <!-- 1. Vista principal del producto -->
+      <article class="product-card reveal">
+        <div class="product-card__img">
+          <img src="https://i.postimg.cc/kgjDhx5g/lv-0-20260718192435.jpg" alt="Funda NØCTIS Built In Silence, diseño galaxia con corona" loading="lazy">
+        </div>
+        <div class="product-card__info">
+          <h3>Built In Silence</h3>
+          <p>Edición galaxia, borde reforzado</p>
+          <span class="product-card__price"></span>
+        </div>
+      </article>
+
+      <!-- 2. Detalles (cámara, textura, protección) -->
+      <article class="product-card reveal">
+        <div class="product-card__img">
+          <img src="https://i.postimg.cc/wM278Pp4/lv-0-20260718123310.jpg" alt="Detalle macro de la funda NØCTIS, borde de aluminio y estampado galaxia" loading="lazy">
+        </div>
+        <div class="product-card__info">
+          <h3>Macro Detail</h3>
+          <p>Borde reforzado y acabado galaxia</p>
+          <span class="product-card__price"></span>
+        </div>
+      </article>
+
+      <!-- 3. Packaging -->
+      <article class="product-card reveal">
+        <div class="product-card__img">
+          <img src="https://i.postimg.cc/8ccVcnW1/lv-0-20260718120146.jpg" alt="Funda NØCTIS junto a su packaging sellado" loading="lazy">
+        </div>
+        <div class="product-card__info">
+          <h3>Signature Pack</h3>
+          <p>Incluye empaque premium sellado</p>
+          <span class="product-card__price"></span>
+        </div>
+      </article>
+
+      <!-- 4. Vista superior con corona -->
+      <article class="product-card reveal">
+        <div class="product-card__img">
+          <img src="https://i.postimg.cc/pTVwc1sR/lv-0-20260718122710.jpg" alt="Funda NØCTIS vista superior con corona grabada" loading="lazy">
+        </div>
+        <div class="product-card__info">
+          <h3>Crown Edition</h3>
+          <p>Grabado de corona en alto detalle</p>
+          <span class="product-card__price"></span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================== PROCESO ===================== -->
+  <section class="proceso">
+    <div class="section-head reveal">
+      <span class="eyebrow">Cómo funciona</span>
+      <h2 class="section-title">Tres pasos.<br>Cero complicaciones.</h2>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-card reveal">
+        <svg class="process-card__icon" width="30" height="30" viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="10" stroke="#F5F5F7" stroke-width="1.4"/><path d="M15 10v5l3.5 3.5" stroke="#F5F5F7" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <span class="process-card__num">01</span>
+        <h3>Elegí tu estilo</h3>
+        <p>Explorá la colección y elegí el diseño que más te representa.</p>
+      </div>
+      <div class="process-card reveal">
+        <svg class="process-card__icon" width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M7 23l3-1 12-12-2-2-12 12-1 3z" stroke="#F5F5F7" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        <span class="process-card__num">02</span>
+        <h3>Diseñamos</h3>
+        <p>Adaptamos el arte exacto al modelo de tu teléfono.</p>
+      </div>
+      <div class="process-card reveal">
+        <svg class="process-card__icon" width="30" height="30" viewBox="0 0 30 30" fill="none"><rect x="7" y="7" width="16" height="16" rx="2" stroke="#F5F5F7" stroke-width="1.4"/><path d="M11 15l3 3 5-6" stroke="#F5F5F7" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="process-card__num">03</span>
+        <h3>Fabricamos</h3>
+        <p>Producción bajo pedido y control de calidad antes del envío.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECCIÓN DE RESERVA ===================== -->
+  <section id="reserva" class="proceso" style="border-top: 1px solid var(--line);">
+    <div class="section-head reveal">
+      <span class="eyebrow">Reserva</span>
+      <h2 class="section-title">Asegurá tu pieza.<br>Edición limitada.</h2>
+      <p style="color: var(--muted); margin-top: 0.8rem; font-size: 0.95rem; max-width: 400px; margin-inline: auto;">Producción en pequeñas cantidades.</p>
+    </div>
+    <div style="text-align: center; margin-top: 1.5rem;">
+      <a href="#" class="btn btn--primary btn--lg reveal">Reservar ahora</a>
+    </div>
+  </section>
+
+  <!-- ===================== CONFIANZA ===================== -->
+  <section class="trust-section" style="border-top: 1px solid var(--line); padding-block: 4rem; text-align: center;">
+    <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 800px; margin: 0 auto;">
+      <div class="reveal">
+        <span style="font-family: var(--font-display); font-size: 1.1rem; display: block;">🚚 Envíos seguros</span>
+        <p style="color: var(--muted); font-size: 0.85rem; margin-top: 0.3rem;">Seguimiento en tiempo real hasta tu puerta.</p>
+      </div>
+      <div class="reveal">
+        <span style="font-family: var(--font-display); font-size: 1.1rem; display: block;">🔒 Pago seguro</span>
+        <p style="color: var(--muted); font-size: 0.85rem; margin-top: 0.3rem;">Mercado Pago, transferencia o débito.</p>
+      </div>
+      <div class="reveal">
+        <span style="font-family: var(--font-display); font-size: 1.1rem; display: block;">📦 Embalaje premium</span>
+        <p style="color: var(--muted); font-size: 0.85rem; margin-top: 0.3rem;">Cada funda llega en su caja rígida y sellada.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA FINAL ===================== -->
+  <section id="cta" class="cta-final">
+    <p class="cta-final__phrase reveal">No llevás una funda.<br><em>Llevás una identidad.</em></p>
+    <a href="#reserva" class="btn btn--primary btn--lg reveal">Reservar mi funda</a>
+  </section>
+
+</main>
+
+<!<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <a href="#" class="nav__logo">NØ<em>CTIS</em></a>
+  <div class="footer__social">
+    <!-- Instagram (Corregido) -->
+    <a href="https://www.instagram.com/nctis.pm" target="_blank" aria-label="Instagram">Instagram</a>
+    
+    <!-- TikTok (Corregido) -->
+    <a href="https://www.tiktok.com/@noctis.cp" target="_blank" aria-label="TikTok">TikTok</a>
+    
+    <!-- WhatsApp (Corregido con el formato correcto) -->
+    <a href="https://wa.me/541136269907" target="_blank" aria-label="WhatsApp">WhatsApp</a>
+  </div>
+  <span class="footer__copy">© 2026 NØCTIS. Hecho en Argentina.</span>
+</footer>
+
+<!-- ===================== LIBRERÍAS ===================== -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
